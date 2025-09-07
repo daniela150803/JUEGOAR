@@ -4,8 +4,15 @@ using UnityEngine.XR.ARFoundation;
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class ImageTrackingHandler : MonoBehaviour
 {
-    [SerializeField] public GameObject spherePrefab;   // tu prefab Sphere
-    [SerializeField] public DragOnTrackedImage drag;    // arrastra el componente DragOnTrackedImage del XR Origin
+    [Header("Prefabs")]
+    [SerializeField] private GameObject boardAnchorPrefab;   // BoardAnchor (vacío con el script)
+    [SerializeField] private GameObject spherePrefab;        // tu esfera
+
+    [Header("Interaction")]
+    [SerializeField] private DragOnBoard drag;               // tu script de arrastre sobre tablero
+
+    [Header("Spawn")]
+    [SerializeField] private float outsideOffset = 0.03f;    // 3 cm fuera del borde inferior
 
     private ARTrackedImageManager _mgr;
 
@@ -17,11 +24,32 @@ public class ImageTrackingHandler : MonoBehaviour
     {
         foreach (var img in e.added)
         {
-            // Instancia la esfera como hija de la imagen detectada
-            var sphere = Instantiate(spherePrefab, img.transform);
-            // Asigna referencias al script de “arrastrar”
-            drag.Movable = sphere;
-            drag.Tracked = img;
+            // 1) Instancia y prepara el tablero
+            var boardGO = Instantiate(boardAnchorPrefab, img.transform);
+            var board   = boardGO.GetComponent<BoardAnchor>();
+            board.InitializeFromTrackedImage(img); // ahora board.boardSize está listo
+
+            // 2) Instancia la esfera como hija del tablero
+            GameObject sphere = null;
+            if (spherePrefab != null)
+            {
+                sphere = Instantiate(spherePrefab, board.transform);
+
+                // Altura para que no se "hunda"
+                var rend   = sphere.GetComponentInChildren<Renderer>();
+                var upOffY = rend ? rend.bounds.extents.y : 0f;
+
+                // Posición local: x=0 (centro), z = borde inferior - fuera
+                float bottomEdge = -board.boardSize.y * 0.5f;          // borde inferior
+                sphere.transform.localPosition = new Vector3(0f, 0f, bottomEdge - outsideOffset);
+
+                // Sube un poquito en el eje "up" del tablero
+                sphere.transform.position += board.transform.up * upOffY;
+            }
+
+            // 3) Pasar referencias al controlador de arrastre
+            if (drag != null)
+                drag.SetContext(img, board, sphere);
         }
     }
 }

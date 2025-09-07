@@ -474,6 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d03a0b4b0a5c4444984b5fa1b7e77bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardAnchorPrefab: {fileID: 322854828695195802, guid: 852ecbebed7743a4fa50c069c5630b51, type: 3}
   spherePrefab: {fileID: 149834444479552024, guid: 064c4ff33f4f4db4bb9ab6ec1dceb94e, type: 3}
   drag: {fileID: 782628383}
 --- !u!114 &782628383
@@ -488,8 +489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1661dcc249e490e4899700886b74304a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movable: {fileID: 0}
-  tracked: {fileID: 0}
 --- !u!1 &1828601335
 GameObject:
   m_ObjectHideFlags: 0
