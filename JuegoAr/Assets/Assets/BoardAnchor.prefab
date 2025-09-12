@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4401004846956019716}
   - component: {fileID: 1941933313724610578}
+  - component: {fileID: 7981212140326778342}
   m_Layer: 0
   m_Name: BoardAnchor
   m_TagString: Untagged
@@ -51,3 +52,22 @@ MonoBehaviour:
   slotMaterial: {fileID: 2100000, guid: 567e1279b02993845a0a1a9c283e7b62, type: 2}
   boardSize: {x: 0, y: 0}
   slots: []
+--- !u!114 &7981212140326778342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322854828695195802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad0cfb036d926d4c9e8b5b4627c926e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardAnchor: {fileID: 1941933313724610578}
+  objectPrefabs:
+  - {fileID: 149834444479552024, guid: 064c4ff33f4f4db4bb9ab6ec1dceb94e, type: 3}
+  - {fileID: 149834444479552024, guid: 858a2cf786486304daba2a35bd485791, type: 3}
+  - {fileID: 149834444479552024, guid: 6c80257e152a0304090346e534977484, type: 3}
+  - {fileID: 149834444479552024, guid: da353f4b6c400a8419f087852099a33d, type: 3}
+  - {fileID: 149834444479552024, guid: c2aae197e25dda042baee6f05d2e62d4, type: 3}
