@@ -490,6 +490,9 @@ MonoBehaviour:
   outsideOffset: 0.03
   spawnSpacing: 0.05
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -504,7 +507,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 1661dcc249e490e4899700886b74304a, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 74300945008ce0f42b66cdb93cab31fd, type: 3}
+>>>>>>> Stashed changes
 =======
   m_Script: {fileID: 11500000, guid: 74300945008ce0f42b66cdb93cab31fd, type: 3}
 >>>>>>> Stashed changes
