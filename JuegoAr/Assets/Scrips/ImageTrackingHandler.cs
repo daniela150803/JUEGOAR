@@ -6,6 +6,7 @@ public class ImageTrackingHandler : MonoBehaviour
 {
     [Header("Prefabs")]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [SerializeField] private GameObject boardAnchorPrefab;   // BoardAnchor (vacío con el script)
     [SerializeField] private GameObject spherePrefab;        // tu esfera
 
@@ -19,6 +20,30 @@ public class ImageTrackingHandler : MonoBehaviour
 =======
     [SerializeField] private GameObject boardAnchorPrefab;   // BoardAnchor
     [SerializeField] private GameObject cardBasePrefab;      // CardBase (con CardController)
+=======
+    [SerializeField] private GameObject boardAnchorPrefab;   // BoardAnchor
+    [SerializeField] private GameObject cardBasePrefab;      // CardBase (con CardController)
+
+    [Header("Cartas disponibles")]
+    [SerializeField] private List<CardData> availableCards = new(); // agrega aquí tus CardData
+
+    [Tooltip("Cantidad inicial de cartas a crear al detectar la imagen")]
+    [SerializeField] private int spawnCount = 3;
+
+    [Tooltip("Elegir carta al instanciar")]
+    [SerializeField] private bool randomPick = true; // false = secuencial
+
+    [Header("Interacción (arrastre)")]
+    [SerializeField] private DragOnBoardMulti drag;  // componente del paso 2
+
+    [Header("Posición inicial (fuera del tablero)")]
+    [SerializeField] private float outsideOffset = 0.03f; // 3 cm fuera del borde inferior
+    [SerializeField] private float spawnSpacing = 0.05f;  // separación lateral entre cartas
+
+    private ARTrackedImageManager _manager;
+    private readonly Dictionary<TrackableId, BoardAnchor> _boards = new();
+    private int _seqIndex = 0; // para modo secuencial
+>>>>>>> Stashed changes
 
     [Header("Cartas disponibles")]
     [SerializeField] private List<CardData> availableCards = new(); // agrega aquí tus CardData
@@ -47,6 +72,7 @@ public class ImageTrackingHandler : MonoBehaviour
 
     void OnChanged(ARTrackedImagesChangedEventArgs e)
     {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         foreach (var img in e.added)
         {
@@ -77,6 +103,8 @@ public class ImageTrackingHandler : MonoBehaviour
             if (drag != null)
                 drag.SetContext(img, board, sphere);
 =======
+=======
+>>>>>>> Stashed changes
         foreach (var img in e.added)   CreateBoardAndCards(img);
         foreach (var img in e.updated) UpdateVisibility(img);
         foreach (var img in e.removed) RemoveBoard(img);
@@ -154,6 +182,9 @@ public class ImageTrackingHandler : MonoBehaviour
         {
             Destroy(board.gameObject);
             _boards.Remove(img.trackableId);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         }
     }
