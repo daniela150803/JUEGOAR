@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4e3e32bd1838341aba4bedf644053a, type: 3}
+  m_Name: CardData_esfera
+  m_EditorClassIdentifier: 
+  id: card_001
+  displayName: Carta Base
+  cost: 1
+  attack: 1
+  defense: 1
+  visualPrefab: {fileID: 149834444479552024, guid: 064c4ff33f4f4db4bb9ab6ec1dceb94e, type: 3}
+  visualLocalPosition: {x: 0, y: 0, z: 0}
+  visualLocalEuler: {x: 0, y: 0, z: 0}
+  visualLocalScale: {x: 0.1, y: 0.1, z: 0.1}

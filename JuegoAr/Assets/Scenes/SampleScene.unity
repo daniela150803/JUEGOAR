@@ -475,8 +475,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardAnchorPrefab: {fileID: 322854828695195802, guid: 852ecbebed7743a4fa50c069c5630b51, type: 3}
+<<<<<<< Updated upstream
   spherePrefab: {fileID: 149834444479552024, guid: 064c4ff33f4f4db4bb9ab6ec1dceb94e, type: 3}
   drag: {fileID: 782628383}
+=======
+  cardBasePrefab: {fileID: 5050205670366857406, guid: 8a67365acbe00ed48aa24569fe8f3ada, type: 3}
+  availableCards:
+  - {fileID: 11400000, guid: a0a75bb26dc390e48abc6b4298509ba7, type: 2}
+  - {fileID: 11400000, guid: c275c8edecc87d043a1064aafd5b11ec, type: 2}
+  - {fileID: 11400000, guid: 178c8b49708e602499c30e6925ba27ab, type: 2}
+  spawnCount: 3
+  randomPick: 1
+  drag: {fileID: 782628383}
+  outsideOffset: 0.03
+  spawnSpacing: 0.05
+>>>>>>> Stashed changes
 --- !u!114 &782628383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,7 +499,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 782628375}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 1661dcc249e490e4899700886b74304a, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 74300945008ce0f42b66cdb93cab31fd, type: 3}
+>>>>>>> Stashed changes
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1828601335
